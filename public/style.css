@@ -7,9 +7,15 @@ body {
     background-repeat: no-repeat;
     background-position: center center;
     font-family: "Radio Canada", sans-serif;
+    text-align: center;
   }
 
-  h1{
-    font
-  }
-/* Enter your styling here */
+h1{
+  font-size: 36px;
+  margin-top: 20px;
+}
+
+.game-container{
+  margin: 35px;
+}
+
