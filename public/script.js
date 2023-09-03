@@ -1,4 +1,4 @@
-const cells = document.querySelectorAll('.cell');
+const cells = document.querySelectorAll('[data-index]');
 const resultText = document.querySelector('.result');
 const resetButton = document.querySelector('.reset-button');
 let currentPlayer = 'X';
@@ -13,7 +13,7 @@ function handleCellClick(index) {
         return;
     }
 
-    if(checkWin()){
+    if(checkWin(currentPlayer)){
         gameActive = false;
         resultText.textContent = `Player ${currentPlayer} Won`;
         resetButton.disabled = false;
@@ -27,7 +27,7 @@ function handleCellClick(index) {
     }
 }
 
-function checkWin(){
+function checkWin(player){
     const winPatterns = [
         [0, 1, 2],[3, 4, 5],[6, 7, 8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6] ];
     
@@ -49,7 +49,7 @@ function resetGame(){
     currentPlayer = 'X';
     gameActive = true;
     cells.forEach(cell => cell.textContent = '');
-    resultText.textContent = `Player ${currentPlayer} Turn`;
+    resultText.textContent = `Player ${currentPlayer}sa Turn`;
     resetButton.disabled = true;
 }
 
