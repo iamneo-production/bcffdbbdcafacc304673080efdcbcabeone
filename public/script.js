@@ -1,5 +1,5 @@
-const cells = document.querySelectorAll('[data-cell]');
-const resultText = document.querySelector('.result-text');
+const cells = document.querySelectorAll('.cell');
+const resultText = document.querySelector('.result');
 const resetButton = document.querySelector('.reset-button');
 let currentPlayer = 'X';
 let gameBoard = ['','','','','','','','',''];
@@ -7,13 +7,11 @@ let gameActive = true;
 
 function handleCellClick(index) {
     gameBoard[index] = currentPlayer;
-    cells[index].value = currentPlayer
+    cells[index].value = currentPlayer;
+    cells[index].disabled = true;
     if(gameBoard[cellIndex] !== '' || !gameActive){
         return;
     }
-
-    gameBoard[cellIndex] = currentPlayer;
-    cell.textContent = currentPlayer;
 
     if(checkWin()){
         gameActive = false;
@@ -21,7 +19,7 @@ function handleCellClick(index) {
         resetButton.disabled = false;
     } else if (isBoardFull()){
         gameActive = false;
-        resultText.textContent = 'It\'s a draw!';
+        resultText.textContent = `Its a draw!`;
         resetButton.disabled = false;
     } else {
         currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
