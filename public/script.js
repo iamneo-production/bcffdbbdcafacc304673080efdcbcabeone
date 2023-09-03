@@ -9,20 +9,17 @@ function handleCellClick(index) {
     gameBoard[index] = currentPlayer;
     cells[index].value = currentPlayer;
     cells[index].disabled = true;
-    if(gameBoard[cellIndex] !== '' || !gameActive){
-        return;
-    }
-
     if(checkWin(currentPlayer)){
         gameActive = false;
         resultText.textContent = `Player ${currentPlayer} Won`;
         resetButton.disabled = false;
-    } else if (isBoardFull()){
+    } else if (gameBoard.every(cell=>cell!=='')){
         gameActive = false;
         resultText.textContent = `Its a draw!`;
+        gameActive == false;
         resetButton.disabled = false;
     } else {
-        currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+        currentPlayer = currentPlayer === 'X'?'O':'X';
         resultText.textContent = `Player ${currentPlayer} Turn`;
     }
 }
@@ -38,10 +35,6 @@ function checkWin(player){
         }
     } 
     return false;
-}
-
-function isBoardFull(){
-    return !gameBoard.includes('');
 }
 
 function resetGame(){
