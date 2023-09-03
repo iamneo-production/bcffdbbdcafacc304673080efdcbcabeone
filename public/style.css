@@ -26,8 +26,8 @@ h1{
 }
 
 .cell{
-  width: 100px;
-  height: 100px;
+  width: 75px;
+  height: 75px;
   font-size: 36px;
   display: flex;
   justify-content: center;
@@ -42,5 +42,9 @@ h1{
 }
 
 .result-container{
-  background-color: rgba(255,255);
+  background-color: rgba(255,255,255,0.8);
+  border: 2px solid #000;
+  max-width: 200px;
+  margin: 20px auto;
+  padding: 10px;
 }
