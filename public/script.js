@@ -17,7 +17,7 @@ function handleCellClick(e) {
 
     if(checkWin()){
         gameActive = false;
-        resultText.textContent = 'Player ${currentPlayer} wins!';
+        resultText.textContent = `Player ${currentPlayer} Won`;
         resetButton.disabled = false;
     } else if (isBoardFull()){
         gameActive = false;
@@ -25,7 +25,7 @@ function handleCellClick(e) {
         resetButton.disabled = false;
     } else {
         currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-        resultText.textContent = 'Player ${currentPlayer}\' turn';
+        resultText.textContent = `Player ${currentPlayer} Turn';
     }
 }
 
@@ -51,8 +51,11 @@ function resetGame(){
     currentPlayer = 'X';
     gameActive = true;
     cells.forEach(cell => cell.textContent = '');
-    resultText.textContent = 'Player ${currentPlayer}\'s turn';
+    resultText.textContent = 'Player ${currentPlayer} Turn';
     resetButton.disabled = true;
 }
 
-cells.forEach
+cells.forEach(cell => cell.addEventListener('click',handleCellClick));
+resetButton.addEventListener('click',resetGame);
+
+resultText.textContent = 'Player ${currentPlayer} Turn';
