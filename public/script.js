@@ -1,7 +1,7 @@
 const cells = document.querySelectorAll('.cell');
 const resultText = document.querySelector('.result-container');
 const resetButton = document.querySelector('.reset');
-let currentPlayer = 'X';
+let currentPlayer = 'O';
 let gameBoard = ['','','','','','','','',''];
 let gameActive = true;
 
