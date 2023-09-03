@@ -6,9 +6,11 @@ let gameBoard = ['','','','','','','','',''];
 let gameActive = true;
 
 function handleCellClick(index) {
+    if(gameBoard[index]==='' && gameActive){
     gameBoard[index] = currentPlayer;
     cells[index].value = currentPlayer;
     cells[index].disabled = true;
+    
     if(checkWin(currentPlayer)){
         gameActive = false;
         resultText.textContent = `Player ${currentPlayer} Won`;
@@ -22,6 +24,7 @@ function handleCellClick(index) {
         currentPlayer = currentPlayer === 'X'?'O':'X';
         resultText.textContent = `Player ${currentPlayer} Turn`;
     }
+}
 }
 
 function checkWin(player){
