@@ -5,9 +5,9 @@ let currentPlayer = 'X';
 let gameBoard = ['','','','','','','','',''];
 let gameActive = true;
 
-function handleCellClick(e) {
-    const cell = e.target;
-    const cellIndex = parseInt(cell.getAttribute('data-index'));
+function handleCellClick(index) {
+    gameBoard[index] = currentPlayer;
+    cells[index].value = currentPlayer
     if(gameBoard[cellIndex] !== '' || !gameActive){
         return;
     }
@@ -55,7 +55,7 @@ function resetGame(){
     resetButton.disabled = true;
 }
 
-cells.forEach(cell => cell.addEventListener('click', handleCellClick));
+cells.forEach((cell,index) => {cell.addEventListener('click', ()=>{handleCellClick(index);});});
 resetButton.addEventListener('click',resetGame);
 
 resultText.textContent = `Player ${currentPlayer} Turn`;
