@@ -79,7 +79,8 @@ h1{
   border: 2px solid #000;
   color: #000;
   background-color: #fff;
-  width: ;
+  width: 60px;
+  height: 40px;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
