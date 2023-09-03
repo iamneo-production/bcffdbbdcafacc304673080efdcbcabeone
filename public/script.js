@@ -1,4 +1,4 @@
-const cells = document.querySelectorAll('[data-index]');
+const cells = document.querySelectorAll('.cell');
 const resultText = document.querySelector('.result');
 const resetButton = document.querySelector('.reset-button');
 let currentPlayer = 'X';

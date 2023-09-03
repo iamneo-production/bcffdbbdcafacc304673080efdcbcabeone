@@ -20,14 +20,13 @@ h1{
 .game-container{
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center; 
   margin: 35px;
 }
 
 .board{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -42,7 +41,6 @@ h1{
   border: 2px solid #000;
   border-radius: 10px;
   background-color: rgba(255,255,255,0.7);
-  cursor: pointer;
 }
 
 .cell:hover{
