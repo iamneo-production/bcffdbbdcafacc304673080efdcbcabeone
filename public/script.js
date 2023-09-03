@@ -13,5 +13,18 @@ function handleCellClick(e) {
     }
 
     gameBoard[cellIndex] = currentPlayer;
-    cell.textContent = currentPlayer
+    cell.textContent = currentPlayer;
+
+    if(checkWin()){
+        gameActive = false;
+        resultText.textContent = 'Player ${currentPlayer} wins!';
+        resetButton.disabled = false;
+    } else if (isBoardFull()){
+        gameActive = false;
+        resultText.textContent = 'It\'s a draw!';
+        resetButton.disabled = false;
+    } else {
+        currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+        resultText.textContent = 'Player ${currentPlayer}
+    }
 }
