@@ -34,17 +34,24 @@ h1{
 .cell{
   width: 75px;
   height: 75px;
-  font-size: 36px;
-  display: flex;
-  justify-content: center;
+  font-size: 50px;
+  font-weight: 500;
   align-items: center;
-  background-color: #fff;
+  line-height: 75px;
   border: 2px solid #000;
+  border-radius: 10px;
+  background-color: rgba(255,255,255,0.7);
   cursor: pointer;
 }
 
 .cell:hover{
-  background-color: #f0f0f0;
+  background-color: rgba(255,255,255,0.9);
+  cursor: pointer;
+}
+
+.cell[disabled]{
+  color: #000;
+  cursor: not-allowed;
 }
 
 .result-container{
@@ -53,10 +60,13 @@ h1{
   max-width: 200px;
   margin: 20px auto;
   padding: 10px;
+  text-align: center;
 }
 
 .result-text{
   font-size: 25px;
+  color: #fff;
+  text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.5);
 }
 
 .reset-button{
