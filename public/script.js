@@ -49,7 +49,7 @@ function resetGame(){
     currentPlayer = 'X';
     gameActive = true;
     cells.forEach(cell => cell.textContent = '');
-    resultText.textContent = `Player ${currentPlayer}sa Turn`;
+    resultText.textContent = `Player ${currentPlayer} Turn`;
     resetButton.disabled = true;
 }
 
