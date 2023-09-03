@@ -1,7 +1,7 @@
 const cells = document.querySelectorAll('.cell');
 const resultText = document.querySelector('.result-container');
 const resetButton = document.querySelector('.reset');
-let currentPlayer = 'O';
+let currentPlayer = 'X';
 let gameBoard = ['','','','','','','','',''];
 let gameActive = true;
 
@@ -46,9 +46,11 @@ function isBoardFull(){
 
 function resetGame(){
     gameBoard = ['','','','','','','','',''];
+    cells.forEach(cell=>{cell.value='';
+    cell.disabled = false;
+});
     currentPlayer = 'X';
     gameActive = true;
-    cells.forEach(cell => cell.textContent = '');
     resultText.textContent = `Player ${currentPlayer} Turn`;
     resetButton.disabled = true;
 }
