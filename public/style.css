@@ -19,3 +19,28 @@ h1{
   margin: 35px;
 }
 
+.board{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.cell{
+  width: 100px;
+  height: 100px;
+  font-size: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border: 2px solid #000;
+  cursor: pointer;
+}
+
+.cell:hover{
+  background-color: #f0f0f0;
+}
+
+.result-container{
+  background-color: rgba(255,255);
+}
